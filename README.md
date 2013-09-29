@@ -1,3 +1,3 @@
 #Gifcase
 
-A case which keeps gifs / an app for me to remember WPF - its been a while! 
+A case which keeps gifs / an app for me to remember WPF - its been a while! Going vanilla to enhance remembering. 
