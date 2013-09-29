@@ -26,7 +26,7 @@ namespace Gifcase.App
             var gif = new Gif
             {
                 ImageSource =
-                    new Uri("http://www.lepoissonrouge.com/wp-content/uploads/2013/07/Lorde_PhotobyCharlesHowells_2.jpg")
+                    new Uri("http://media.tumblr.com/0af4ab5d45b6e8f1f26f98475ef1f496/tumblr_inline_mmvc6e6N3m1qz4rgp.gif")
             };
             IView view = viewLocator.FindView<IGifViewModel>(new GifViewModel(gif));
             shell.ShowInMainRegion(view);
