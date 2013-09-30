@@ -18,7 +18,7 @@ namespace Gifcase.App.ViewModels
         public GifImageImageViewModel(Gif gif)
         {
             LoadingImage = new BitmapImage(new Uri("pack://application:,,,/Images/loading.gif"));
-            FallbackImage = new BitmapImage(new Uri("pack://application:,,,/Images/loading.gif"));
+            FallbackImage = new BitmapImage(new Uri("pack://application:,,,/Images/error.png"));
             Image = new BitmapImage(gif.ImageSource);
             Image.DownloadProgress += OnDownloadProgress;
             Image.DownloadCompleted += OnDownloadSuccessful;
