@@ -24,6 +24,7 @@ namespace Gifcase.App
             root.Configure(_shell);
             var viewLocator = root.Resolve<IViewLocator>();
             var shell = root.Resolve<IShell>();
+            //todo factor this out into a service of some kind.
             var gifOne = new Gif
             {
                 ImageSource =
