@@ -13,10 +13,10 @@ namespace Gifcase.App.Shell
             _kernel = kernel;
         }
 
-        public IView FindView<T>(T viewModel) where T : IViewModel
+        public IView<TViewModel> FindView<TViewModel>(TViewModel viewModel) where TViewModel : IViewModel
         {
-            var view = (IView)_kernel.GetService(typeof(IView));
-            view.DataContext = viewModel;
+            var view =(IView<TViewModel>)_kernel.GetService(typeof(IView<TViewModel>));
+            view.ViewModel = viewModel;
             return view;
         }
     }

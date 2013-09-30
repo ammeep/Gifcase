@@ -5,6 +5,6 @@ namespace Gifcase.App.Shell
 {
     public interface IViewLocator
     {
-        IView FindView<T>(T viewModel) where T : IViewModel;
+        IView<TViewModel> FindView<TViewModel>(TViewModel viewModel) where TViewModel : IViewModel;
     }
 }

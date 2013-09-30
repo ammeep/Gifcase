@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using Gifcase.App.Shell;
+using Gifcase.App.ViewModels;
 using Gifcase.App.Views;
 
 namespace Gifcase.App
@@ -18,7 +19,7 @@ namespace Gifcase.App
             Bootstrapper.Start();
         }
 
-        public void ShowInMainRegion(IView view)
+        public void ShowInMainRegion<TViewModel>(IView<TViewModel> view) where TViewModel : IViewModel
         {
             MainRegion.Content = view;
         }

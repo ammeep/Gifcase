@@ -1,7 +1,9 @@
-﻿namespace Gifcase.App.Views
+﻿using Gifcase.App.ViewModels;
+
+namespace Gifcase.App.Views
 {
-    public interface IView
+    public interface IView<TViewModel> where TViewModel: IViewModel
     {
-        object DataContext { get; set; }
+        TViewModel ViewModel { get; set; }
     }
 }

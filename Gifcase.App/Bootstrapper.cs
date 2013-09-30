@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Gifcase.App.Models;
 using Gifcase.App.Shell;
 using Gifcase.App.ViewModels;
@@ -23,12 +24,23 @@ namespace Gifcase.App
             root.Configure(_shell);
             var viewLocator = root.Resolve<IViewLocator>();
             var shell = root.Resolve<IShell>();
-            var gif = new Gif
+            var gifOne = new Gif
             {
                 ImageSource =
                     new Uri("http://media.tumblr.com/0af4ab5d45b6e8f1f26f98475ef1f496/tumblr_inline_mmvc6e6N3m1qz4rgp.gif")
             };
-            IView view = viewLocator.FindView<IGifImageViewModel>(new GifImageViewModel(gif));
+            var gifTwo = new Gif
+            {
+                ImageSource =
+                    new Uri("http://media.tumblr.com/0af4ab5d45b6e8f1f26f98475ef1f496/tumblr_inline_mmvc6e6N3m1qz4rgp.gif")
+            };
+
+            var gifThree = new Gif
+            {
+                ImageSource =
+                    new Uri("http://media.tumblr.com/0af4ab5d45b6e8f1f26f98475ef1f496/tumblr_inline_mmvc6e6N3m1qz4rgp.gif")
+            };
+            IView<IGifcaseViewModel> view = viewLocator.FindView<IGifcaseViewModel>(new GifcaseViewModel(new List<Gif>{gifOne,gifTwo,gifThree}));
             shell.ShowInMainRegion(view);
         }
 
@@ -53,7 +65,8 @@ namespace Gifcase.App
             public override void Load()
             {
                 Bind<IViewLocator>().To<ViewLocator>();
-                Bind<IView>().To<GifView>();
+                Bind<IView<IGifImageViewModel>>().To<GifView>();
+                Bind<IView<IGifcaseViewModel>>().To<GifcaseView>();
             }
         }
 
