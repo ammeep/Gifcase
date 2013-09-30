@@ -4,8 +4,10 @@ using System.Runtime.CompilerServices;
 
 namespace Gifcase.App.ViewModels
 {
-    public abstract class ViewModel : INotifyPropertyChanged
+    public abstract class ViewModel : INotifyPropertyChanged, IDisposable
     {
+        private bool _disposed; 
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] String propertyName = null)
@@ -23,6 +25,29 @@ namespace Gifcase.App.ViewModels
             {
                 eventHandler(this, new PropertyChangedEventArgs(propertyName));
             }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected void Dispose(bool disposing)
+        {
+            if (!_disposed)
+            {
+                if (disposing)
+                {
+                    CleanUp();
+                }
+                _disposed = true;
+            } 
+        }
+
+        protected virtual void CleanUp()
+        {
+            //nothing
         }
     }
 }

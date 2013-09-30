@@ -71,7 +71,8 @@
     <Compile Include="Shell\IViewLocator.cs" />
     <Compile Include="Shell\ViewLocator.cs" />
     <Compile Include="ViewModels\GifcaseViewModel.cs" />
-    <Compile Include="ViewModels\GifViewModel.cs" />
+    <Compile Include="ViewModels\GifImageViewModel.cs" />
+    <Compile Include="ViewModels\IGifImageViewModel.cs" />
     <Compile Include="ViewModels\IViewModel.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />
     <Compile Include="Views\GifView.xaml.cs">
@@ -120,6 +121,11 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\loading.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
