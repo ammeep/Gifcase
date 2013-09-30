@@ -28,7 +28,7 @@ namespace Gifcase.App
                 ImageSource =
                     new Uri("http://media.tumblr.com/0af4ab5d45b6e8f1f26f98475ef1f496/tumblr_inline_mmvc6e6N3m1qz4rgp.gif")
             };
-            IView view = viewLocator.FindView<IGifImageViewModel>(new GifImageImageViewModel(gif));
+            IView view = viewLocator.FindView<IGifImageViewModel>(new GifImageViewModel(gif));
             shell.ShowInMainRegion(view);
         }
 
@@ -63,6 +63,4 @@ namespace Gifcase.App
         }
 
     }
-
-
 }

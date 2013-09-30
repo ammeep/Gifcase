@@ -6,7 +6,7 @@ using Gifcase.App.Models;
 
 namespace Gifcase.App.ViewModels
 {
-    public class GifImageImageViewModel : ViewModel, IGifImageViewModel 
+    public class GifImageViewModel : ViewModel, IGifImageViewModel 
     {
         private BitmapImage _image;
         private BitmapImage _fallbackImage;
@@ -15,7 +15,7 @@ namespace Gifcase.App.ViewModels
         private Visibility _fallbackImageVisibility;
         private Visibility _loadingImageVisibility;
 
-        public GifImageImageViewModel(Gif gif)
+        public GifImageViewModel(Gif gif)
         {
             LoadingImage = new BitmapImage(new Uri("pack://application:,,,/Images/loading.gif"));
             FallbackImage = new BitmapImage(new Uri("pack://application:,,,/Images/error.png"));
